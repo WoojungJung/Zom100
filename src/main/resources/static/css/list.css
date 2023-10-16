@@ -1,0 +1,164 @@
+@font-face {
+    font-family: 'Giants-Inline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Giants-Inline.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'iceJaram-Rg';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/iceJaram-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 전체공통 */
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+body{
+    font-size: 1.5rem;
+}
+button{
+    cursor: pointer;
+}
+li{
+    list-style: none;
+}
+div{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: #dbdada;
+}
+a:visited{
+    text-decoration: none;
+    color: #dbdada;
+}
+/* 배경 */
+.wrap{
+    background-color: #fb470b;
+    height: 100vh;
+    display: flex;
+}
+.container{
+    background-color: white;
+    border-radius: 1%;
+    height: 95vh;
+    width: 250px;
+    margin:auto;
+    padding: 1rem;
+    font-family: 'SBAggroB';
+}
+
+/* 상단 id, 초기화버튼 */
+.section1-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    margin-bottom: 5px;
+}
+.name{
+    font-size: 1rem;
+    color: #5d6de8;
+    cursor: pointer;
+}
+.reset{
+    background-color: #fb470b;
+    font-family: 'SBAggroB';
+    color: white;
+    border-radius: 3px;
+    padding: 3px 5px 1px;
+}
+
+/* h3타이틀 */
+.section1 h3{
+    font-size: 1.8rem;
+    font-family: 'Giants-Inline';
+    text-align: center;
+    line-height: 100%;
+}
+.next-line{
+    display: block;
+}
+.done-text{
+    margin-top: 10px;
+    text-align: end;
+    font-size: 0.8rem;
+}
+/* 섹션2 */
+.section2{
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+/* 노트줄 */
+.line{
+    background-color: #dbdada;
+    height: 0.5px;
+}
+/* 내용 content */
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.content > label{
+    font-size: 0.8rem;
+    font-weight: 300;
+    font-family: 'SBAggroB';
+}
+input[type=text]{
+    width: 85%;
+    font-family: 'iceJaram-Rg';
+    font-size: 1.2rem;
+    font-weight: 700;
+    caret-color: #5d6de8;
+}
+input[type=text]:focus{
+    outline: none;
+    border: none;
+}
+input[type=checkbox]{
+    border: #16cc56;
+    accent-color:  #16cc56;
+}
+
+/* section3 페이징버튼 */
+.section3{
+    position:absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+.page-btn-list{
+    display: flex;
+    justify-content: center;
+}
+.page-btn{
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+.active{
+    color: #5d6de8;
+}
+/* 데스트탑 */
+@media (min-width: 700px){
+    .container{
+        width: 50%;
+    }
+    .next-line{
+        display: inline;
+    }
+}

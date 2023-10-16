@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOM100</title>
+    <link rel="stylesheet" href="../css/list.css">
+</head>
+
+<body>
+<!-- 전체wrap -->
+<div class="wrap">
+    <!-- 가운데 내용 container -->
+    <div class="container">
+        <main class="main-wrap">
+            <!-- 상단 section -->
+            <section class="section1">
+                <div class="section1-top">
+                    <p class="name">jwjwj</p>
+                    <button type="button" class="reset">초기화</button>
+                </div>
+                <h3>좀비가 되기 전 <span class="next-line">하고싶은 100 가지</span></h3>
+                <p class="done-text">DONE</p>
+                <div class="line"></div>
+            </section>
+            <!-- 중간 section -->
+            <section class="section2">
+                <!-- 여기부터 컨텐츠리스트 레이아웃 반복 -->
+                <div class="section2-wrap">
+                    <div class="content">
+                        <!-- 숫자 1-100-->
+                        <label for="content">1.</label>
+                        <input type="text" name="content" class="content-text" maxlength="75">
+                        <input type="checkbox" class="check-btn">
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <!-- 여기까지 컨텐츠리스트 레이아웃 반복 -->
+            </section>
+            <section class="section3">
+                <!-- 페이징 예시 -->
+                <ul class="page-btn-list">
+                    <li class="page-btn active">1</li>
+                    <li class="page-btn">2</li>
+                    <li class="page-btn">3</li>
+                    <li class="page-btn">4</li>
+                    <li class="page-btn">5</li>
+                </ul>
+            </section>
+
+        </main>
+    </div>
+
+</div>
+</body>
+
+</html>
