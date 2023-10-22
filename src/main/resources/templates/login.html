@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZOM100</title>
-  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" th:href="@{/css/login.css}">
 </head>
 <body>
 <!-- 전체wrap -->
@@ -37,7 +38,7 @@
         <form action="">
           <input type="text" placeholder="EMAIL ADDRESS"  class="btn">
           <input type="password" placeholder="PASSWORD" class="btn">
-          <button type="submit" class="btn start">START!</button>
+          <button type="submit" class="btn start" th:href="@{/zom100user/list}">START!</button>
         </form>
       </section>
       <!-- 최하단section -->
@@ -47,5 +48,13 @@
   </div>
   <div class="popup none"></div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script th:src="@{/js/login.js}"></script>
+<!--<script>-->
+<!--  let $head = $('#seller-main');-->
+<!--  $(".header-nav-item>a").removeClass("header-active");-->
+<!--  $head.addClass("header-active");-->
+<!--</script>-->
+<!--<script type="module" th:src="@{/js/seller/seller_main.js}"></script>-->
 </body>
 </html>
