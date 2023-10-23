@@ -1,9 +1,16 @@
 package com.example.zom100.mapper;
 
+import com.example.zom100.dto.UserDto;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface UserMapper {
+//    최초등록-회원가입
+    void insert(UserDto userDto);
+//    등록된 이메일인지 조회 1/0
+    int selectEmail(String userEmail);
+//    이메일,비번으로 사용자번호 조회
+    long selectUser(UserDto userDto);
 
 }
 

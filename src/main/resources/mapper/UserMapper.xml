@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.zom100.mapper.UserMapper">
+<!--    이메일,비밀번호로 사용자 등록-->
+    <insert id="insert">
+        <selectKey keyProperty="userNumber" order="BEFORE" resultType="long">
+            SELECT SEQ_ZOM100_USER.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO ZOM100_USER (USER_NUMBER, USER_PASSWORD, USER_EMAIL)
+        VALUES(#{userNumber},#{userPassword},#{userEmail})
+    </insert>
+
+<!--    등록된 이메일인지 확인 0/1-->
+    <select id="selectEmail" resultType="int">
+        SELECT COUNT(*) FROM ZOM100_USER WHERE USER_EMAIL = #{userEmail}
+    </select>
+
+<!--    이메일, 비밀번호로 사용자 번호 조회-->
+    <select id="selectUser" resultType="long">
+        SELECT USER_NUMBER FROM ZOM100_USER
+        WHERE USER_EMAIL = #{userEmail} AND USER_PASSWORD = #{userPassword}
+    </select>
 
 </mapper>
