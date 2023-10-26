@@ -35,10 +35,10 @@
       <!-- 하단section -->
       <section class="login-bottom">
         <!-- 버튼3개 -->
-        <form action="">
-          <input type="text" placeholder="EMAIL ADDRESS"  class="btn">
-          <input type="password" placeholder="PASSWORD" class="btn">
-          <button type="submit" class="btn start" th:href="@{/zom100user/list}">START!</button>
+        <form th:action="@{/zom100user/login}" method="post">
+          <input type="text" placeholder="EMAIL ADDRESS"  class="btn" name="userEmail" required>
+          <input type="password" placeholder="PASSWORD" class="btn" name="userPassword" required>
+          <button type="submit" class="btn start">START!</button>
         </form>
       </section>
       <!-- 최하단section -->
