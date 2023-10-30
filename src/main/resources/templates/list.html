@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ZOM100</title>
     <link rel="stylesheet" th:href="@{/css/list.css}">
 </head>
@@ -17,7 +18,7 @@
             <!-- 상단 section -->
             <section class="section1">
                 <div class="section1-top">
-                    <p class="name">jwjwj</p>
+                    <p class="name" id="userId"></p>
                     <button type="button" class="reset">초기화</button>
                 </div>
                 <h3>좀비가 되기 전 <span class="next-line">하고싶은 100 가지</span></h3>
@@ -28,13 +29,15 @@
             <section class="section2">
                 <!-- 여기부터 컨텐츠리스트 레이아웃 반복 -->
                 <div class="section2-wrap">
+                    <th:block th:each="num:${#numbers.sequence(1,20)}">
                     <div class="content">
                         <!-- 숫자 1-100-->
-                        <label for="content">1.</label>
-                        <input type="text" name="content" class="content-text" maxlength="75">
-                        <input type="checkbox" class="check-btn">
+                        <span name="wish-cnt" th:text="${num}">.</span>
+                        <input type="text" id="content" name="content" class="content-text" maxlength="75">
+                        <input type="checkbox" class="check-btn" name="status">
                     </div>
                     <div class="line"></div>
+                    </th:block>
                 </div>
                 <!-- 여기까지 컨텐츠리스트 레이아웃 반복 -->
             </section>
@@ -55,12 +58,7 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script th:src="@{/js/list.js}"></script>
-<!--<script>-->
-<!--  let $head = $('#seller-main');-->
-<!--  $(".header-nav-item>a").removeClass("header-active");-->
-<!--  $head.addClass("header-active");-->
-<!--</script>-->
-<!--<script type="module" th:src="@{/js/seller/seller_main.js}"></script>-->
+<script th:src="@{/js/mo.js}" th:type="module"></script>
 </body>
 
 </html>

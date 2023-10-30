@@ -105,7 +105,7 @@ a:visited{
 /* 노트줄 */
 .line{
     background-color: #dbdada;
-    height: 0.5px;
+    height: 1.5px;
 }
 /* 내용 content */
 .content{
@@ -113,7 +113,7 @@ a:visited{
     align-items: center;
     justify-content: space-between;
 }
-.content > label{
+.content > span{
     font-size: 0.8rem;
     font-weight: 300;
     font-family: 'SBAggroB';

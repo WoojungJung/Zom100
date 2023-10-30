@@ -6,8 +6,8 @@
         <selectKey keyProperty="userNumber" order="BEFORE" resultType="long">
             SELECT SEQ_ZOM100_USER.NEXTVAL FROM DUAL
         </selectKey>
-        INSERT INTO ZOM100_USER (USER_NUMBER, USER_PASSWORD, USER_EMAIL)
-        VALUES(#{userNumber},#{userPassword},#{userEmail})
+        INSERT INTO ZOM100_USER (USER_NUMBER, USER_PASSWORD, USER_EMAIL, USER_ID)
+        VALUES(#{userNumber},#{userPassword},#{userEmail}, #{userEmail})
     </insert>
 
 <!--    등록된 이메일인지 확인 0/1-->
@@ -19,6 +19,12 @@
     <select id="selectUser" resultType="long">
         SELECT USER_NUMBER FROM ZOM100_USER
         WHERE USER_EMAIL = #{userEmail} AND USER_PASSWORD = #{userPassword}
+    </select>
+
+<!--    닉네임 조회-->
+    <select id="selectUserId" resultType="String">
+        SELECT USER_ID FROM ZOM100_USER
+        WHERE USER_NUMBER = #{userNumber}
     </select>
 
 </mapper>

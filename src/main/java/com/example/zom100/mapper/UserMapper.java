@@ -14,5 +14,8 @@ public interface UserMapper {
 
 //    이메일,비번으로 사용자번호 조회
     long selectUser(UserDto userDto);
+
+//    닉네임(ID), 이메일 조회
+    String selectUserId(Long userNumber);
 }
 

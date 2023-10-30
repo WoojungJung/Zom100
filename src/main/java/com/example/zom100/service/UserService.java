@@ -25,5 +25,12 @@ public class UserService {
                     throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
                 });
     }
-
-}
+//    닉네임조회
+    public String findUserId(Long userNumber){
+        if(userNumber == null){throw new IllegalArgumentException("회원번호누락");}
+            return Optional.ofNullable(userMapper.selectUserId(userNumber))
+                    .orElseThrow(()->{
+                        throw new IllegalArgumentException("아이디가 없습니다.");
+                    });
+        }
+    }
