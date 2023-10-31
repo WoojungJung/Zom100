@@ -32,5 +32,13 @@ public class UserService {
                     .orElseThrow(()->{
                         throw new IllegalArgumentException("아이디가 없습니다.");
                     });
-        }
+    }
+
+
+//    닉네임(userId)변경
+    public void changeUserId(Long userNumber, String userId){
+        if(userNumber==null || userId==null){throw new IllegalArgumentException("회원정보누락");}
+        userMapper.updateUserId(userNumber,userId);
+    }
+
     }

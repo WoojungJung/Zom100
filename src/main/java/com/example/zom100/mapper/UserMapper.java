@@ -17,5 +17,8 @@ public interface UserMapper {
 
 //    닉네임(ID), 이메일 조회
     String selectUserId(Long userNumber);
+
+//    닉네임(userId) 변경
+    void updateUserId(Long userNumber, String userId);
 }
 

@@ -71,12 +71,32 @@ a:visited{
     color: #5d6de8;
     cursor: pointer;
 }
-.reset{
-    background-color: #fb470b;
+
+/*닉네임변경버튼*/
+#changeUserId{
+    width: 100px;
     font-family: 'SBAggroB';
+    border: 1px solid #5d6de8;
+    border-radius: 5px;
+}
+#idChangeDone {
+    width: 30px;
+    height: 24px;
+    background-color: #16cc56;
     color: white;
-    border-radius: 3px;
-    padding: 3px 5px 1px;
+    font-family: 'SBAggroB';
+    border-radius: 25px;
+}
+.hide{
+    display: none;
+}
+/*리스트초기화*/
+.reset{
+background-color: #fb470b;
+font-family: 'SBAggroB';
+color: white;
+border-radius: 3px;
+padding: 3px 5px 1px;
 }
 
 /* h3타이틀 */

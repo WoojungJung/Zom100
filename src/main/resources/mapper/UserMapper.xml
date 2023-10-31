@@ -27,4 +27,10 @@
         WHERE USER_NUMBER = #{userNumber}
     </select>
 
+<!--    닉네임 변경-->
+    <update id="updateUserId">
+        UPDATE ZOM100_USER
+        SET USER_ID = #{userId}
+        WHERE USER_NUMBER = #{userNumber}
+    </update>
 </mapper>
