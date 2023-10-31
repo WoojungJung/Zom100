@@ -31,19 +31,19 @@
             </section>
             <!-- 중간 section -->
             <section class="section2">
-                <!-- 여기부터 컨텐츠리스트 레이아웃 반복 -->
                 <div class="section2-wrap">
+                <!-- 여기부터 컨텐츠리스트 레이아웃 반복 -->
                     <th:block th:each="num:${#numbers.sequence(1,20)}">
                     <div class="content">
                         <!-- 숫자 1-100-->
                         <span name="wish-cnt" th:text="${num}">.</span>
-                        <input type="text" name="content" class="content-text" maxlength="75">
-                        <input type="checkbox" class="check-btn" name="status">
+                        <input type="text" name="wish-content" class="content-text" maxlength="75">
+                        <input type="checkbox" class="check-btn" name="wish-status">
                     </div>
                     <div class="line"></div>
                     </th:block>
-                </div>
                 <!-- 여기까지 컨텐츠리스트 레이아웃 반복 -->
+                </div>
             </section>
             <section class="section3">
                 <!-- 페이징 예시 -->

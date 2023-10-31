@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.zom100.mapper.WishMapper">
-
+    <select id="selectWishList" resultType="wishDto">
+        SELECT  WISH_NUMBER, WISH_CNT, WISH_CONTENT, WISH_STATUS
+        FROM( SELECT ROWNUM AS RNUM,WISH_NUMBER, WISH_CNT, WISH_CONTENT,WISH_STATUS
+             FROM(
+                SELECT WISH_NUMBER, WISH_CNT, WISH_CONTENT,WISH_STATUS FROM ZOM100_WISH
+                WHERE USER_NUMBER = 10
+                ORDER BY WISH_CNT ASC) S1
+               <![CDATA[ WHERE ROWNUM <= #{criteria.page}*#{criteria.amount} ]]>
+        )S2
+        WHERE RNUM > (#{criteria.page}-1)*#{criteria.amount};
+    </select>
+    
+    
+    
 </mapper>
